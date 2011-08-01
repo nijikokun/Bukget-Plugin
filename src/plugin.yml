@@ -1,0 +1,45 @@
+name: BukGet
+main: omg.bukget.BukGet
+version: 0.6.1
+authors: [Nijikokun]
+commands:
+  pkg:
+    aliases: [bukget]
+    description:
+    usage:
+permissions:
+    bukget.*:
+        description: Gives access to all commands
+        children:
+            bukget.help: true
+            bukget.reload: true
+            bukget.list: true
+            bukget.install: true
+            bukget.installed: true
+            bukget.update: true
+            bukget.update.multi: true
+            bukget.update.all: true
+    bukget.help:
+        description: Allows you to request help information.
+        default: op
+    bukget.reload:
+        description: Allows you to reload the package repository and package info.
+        default: op
+    bukget.list:
+        description: Allows you to list packages in bukget
+        default: op
+    bukget.install:
+        description: Installs a package.
+        default: op
+    bukget.installed:
+        description: Check current installed packages.
+        default: op
+    bukget.update:
+        description: Update a single package.
+        default: op
+    bukget.update.multi:
+        description: Update multiple packages seperated by comma.
+        default: op
+    bukget.update.all:
+        description: Update all packages denoted by asterisk.
+        default: op

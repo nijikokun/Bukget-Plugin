@@ -1,0 +1,40 @@
+#
+# |_    |  _  _ _|_
+# |_)|_||<(_|(/_ |_
+#   2011   _|
+#
+# @author: Nijikokun <nijikokun@gmail.com>
+# @thanks: Steve[cug], Moofish, ks, Zeerix, and countless others!
+#
+# Configuration -- Begin
+
+# Should the plugin update itself accordingly with the Repo?
+#   - Default: false
+auto-self-update: false
+
+# Should the plugin automatically reload the server after
+# installing a plugin or updating plugins?
+#   - Default: false
+auto-reload: false
+
+# This is the branch that controls what happens when a plugin
+# contains dependencies, optionally, or requried.
+dependencies:
+
+  # Should we stop the installation of a plugin if the Required
+  # dependencies are missing?
+  #   - Default: true
+  required: true
+
+  # Should we stop the installation of a plugin if the Optional
+  # dependencies are missing?
+  #   - Default: false
+  optional: false
+
+# When listing / updating a plugin, do you want to go by the
+# latest version in the current installed branch (#stable, #dev, #test, etc),
+# or go by the latest released version regardless of branch (false)
+#   - Default: true
+follow-branch: true
+
+# -. .. .--- ..    .. ...    ..-. . -- .- .-.. . 

@@ -28,18 +28,24 @@ public class Remote {
         cancelled = true;
     }
 
-    public static void fetch(String location, String filename) {
+    public static boolean fetch(String location, String filename) {
         try {
             cancelled = false;
             count = total = itemCount = itemTotal = 0;
             System.out.println("[Bukget] Downloading Files");
-            if (cancelled) return;
+
+            if (cancelled) return false;
+
             System.out.println("   + " + filename + " downloading...");
+
             download(location, filename);
+
             System.out.println("   - " + filename + " finished.");
             System.out.println("[Bukget] Downloaded " + filename + "!");
+
+            return true;
         } catch (IOException ex) {
-            System.out.println("[Bukget] Error Downloading File: " + ex);
+            return false;
         }
     }
 

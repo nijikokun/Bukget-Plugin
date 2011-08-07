@@ -3,7 +3,8 @@ package omg.bukget;
 import org.bukkit.util.config.Configuration;
 
 public class Constants {
-    public static String REPO_URL = "http://bukget.org/repo.json";
+    public static String REPO_URL = "http://pkg.nexua.org/api/json";
+    public static String ALT_REPO_URL = "http://bukget.org/repo.json";
     
     // Booleans
     public static boolean SELF_UPDATE = false;

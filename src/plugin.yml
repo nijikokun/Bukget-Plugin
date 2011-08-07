@@ -1,6 +1,6 @@
 name: BukGet
 main: omg.bukget.BukGet
-version: 0.6.1
+version: 0.7
 authors: [Nijikokun]
 commands:
   pkg:

@@ -71,17 +71,35 @@ public class BukGet extends JavaPlugin {
 
         // Check the repo for updates
         FileManager repo = new FileManager(getDataFolder().getPath(), "repo.json", false);
+
         if(repo.exists()) {
             String _RepoMD5 = Remote.checksum(Constants.REPO_URL);
             String _MD5 = repo.checksum();
             
             if(!_RepoMD5.equalsIgnoreCase(_MD5)) {
                 repo.delete();
-                Remote.fetch(Constants.REPO_URL, getDataFolder().getPath() + File.separator + "repo.json");
+
+                boolean success = Remote.fetch(Constants.REPO_URL, getDataFolder().getPath() + File.separator + "repo.json");
+
+                if(!success) {
+                    success = Remote.fetch(Constants.ALT_REPO_URL, getDataFolder().getPath() + File.separator + "repo.json");
+
+                    if(!success)
+                        System.out.println("[Bukget] Error downloading repo... please reload plugin.");
+                }
             }
         } else {
-            if(repo.exists()) repo.delete();
-            Remote.fetch(Constants.REPO_URL, getDataFolder().getPath() + File.separator + "repo.json");
+            if(repo.exists()) 
+                repo.delete();
+
+            boolean success = Remote.fetch(Constants.REPO_URL, getDataFolder().getPath() + File.separator + "repo.json");
+
+            if(!success) {
+                success = Remote.fetch(Constants.ALT_REPO_URL, getDataFolder().getPath() + File.separator + "repo.json");
+
+                if(!success)
+                    System.out.println("[Bukget] Error downloading repo... please reload plugin.");
+            }
         }
 
         repo.read();

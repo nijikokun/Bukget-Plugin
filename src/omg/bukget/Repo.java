@@ -343,7 +343,7 @@ public class Repo {
             this.author = author;
             this.authors = authors;
             this.website = website;
-            this.description = description;
+            this.description = description.replace("\\\\r", "").replace("\\\\n", "").replace("\\r", "").replace("\\n", "").replace("\r", "").replace("\n", "");
             this.categories = categories;
             this.versions = versions;
         }
